@@ -4,7 +4,9 @@ compile_folder() {
     root="$1"
     folder="$2"
     for source in "$folder"/*.typ; do
-        typst compile "$source" --root="$root"
+        if [[ "$source" != *utils.typ ]]; then
+            typst compile "$source" --root="$root"
+        fi
     done
 }
 
@@ -12,7 +14,9 @@ watch_folder() {
     root="$1"
     folder="$2"
     for source in "$folder"/*.typ; do
-        timeout 3h nohup typst watch "$source" --root="$root" > /dev/null 2>&1 &
+        if [[ "$source" != *utils.typ ]]; then
+            timeout 3h nohup typst watch "$source" --root="$root" > /dev/null 2>&1 &
+        fi
     done
 }
 
