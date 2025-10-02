@@ -4,6 +4,12 @@ Note those are my personal lecture notes of some classes I'm attending. I do not
 
 Moreover, I'm not editing lecture notes for all classes I'm attending. For others, I simply refer to the slides and the existing lecture notes (if applicable).
 
+## Build
+
+To build the `.pdf` files, you can simply use `make`, or `make {FOLDER}` for a specific folder.
+
+Moreover, you can start `typst watch` commands which will timeout after 3h for a given folder: `make {FOLDER}_watch`.
+
 ## Typst template
 
 General theme and custom callouts are defined in [`utils.typ`](utils.typ).
